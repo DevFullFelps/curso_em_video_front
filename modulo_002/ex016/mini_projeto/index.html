@@ -4,15 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>América do Sul</title>
 </head>
 
 <body>
-    <h1>America do Sul</h1>
-    <section>
-        <p>Escolha o País</p>
-    </section>
+    <div class="container_top">
+        <h1>America do Sul</h1>
+        <section>
+            <div class="custom-select">
+                <div class="selected">Selecione a região</div>
+                    <ul class="options">
+                        <li>America do Sul</li>
+                        <li>Argentina</li>
+                        <li>Bolívia</li>
+                        <li>Brasil</li>
+                        <li>Chile</li>
+                        <li>Colômbia</li>
+                        <li>Equador</li>
+                        <li>Guiana</li>
+                        <li>Paraguai</li>
+                        <li>Peru</li>
+                        <li>Suriname</li>
+                        <li>Uruguai</li>
+                        <li>Venezuela</li>
+                    </ul>
+            </div>
+        </section>
+    </div>
     <main>
         <div class="america_sul">
             <h2>América do Sul</h2>
@@ -98,7 +123,7 @@
                 </p>
             </div>
         </div>
-        <div class="Brasil">
+        <div class="brasil">
             <h2>Brasil</h2>
             <div class="container_p">
                 <p>
@@ -298,6 +323,28 @@
         <h4>Site criado por Felipe Adriano</h4>
     </footer>
 
+    <script>
+        const select = document.querySelector('.custom-select');
+        const selected = select.querySelector('.selected');
+        const options = select.querySelector('.options');
+
+        selected.addEventListener('click', () => {
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+        });
+
+        options.querySelectorAll('li').forEach(option => {
+            option.addEventListener('click', () => {
+                selected.textContent = option.textContent;
+                options.style.display = 'none';
+            });
+        });
+
+        document.addEventListener('click', e => {
+            if (!select.contains(e.target)) {
+                options.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>

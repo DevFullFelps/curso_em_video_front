@@ -1,0 +1,70 @@
+*{
+    font-family: "Open Sans", sans-serif, Arial, Helvetica;
+    margin: 0;
+    padding: 0;
+}       
+
+body{
+    display: flex;
+    flex-direction: column;
+} 
+
+body .container_top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    
+}
+
+body .container_top section{
+    margin-top: 30px;
+} 
+
+.custom-select{
+    width: 200px;
+    position: relative;
+}
+
+.selected{
+    background-color: white;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+}
+
+.options{
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    display: none;
+    background-color: white;
+    z-index: 10;
+    cursor: pointer;
+    text-align: center;
+}
+
+main{
+    background-color: rgba(19, 228, 29, 0.356);
+    display: flex;
+    justify-content:  center;
+    flex-direction: column;
+    align-items: center;
+    width: 900px;
+    margin: auto;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+
+
+main .argentina, .bolivia, .brasil, .chile, .colombia, .equador, .guiana, .paraguai, .suriname, .peru, .uruguai, .venezuela{
+    display: none;
+}
