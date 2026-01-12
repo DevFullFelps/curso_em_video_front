@@ -25,30 +25,46 @@ body .container_top section{
     margin-top: 30px;
 } 
 
-.custom-select{
-    width: 200px;
-    position: relative;
+.lista_bandeiras ul{
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(75, 75, 75, 0.116);
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.151);
 }
 
-.selected{
-    background-color: white;
-    border: 2px solid #ccc;
+.lista_bandeiras ul li{
+    list-style-type: none;
+    padding: 5px;
+    transition: transform 0.3s;
+    height: 40px;
+    width: 50px;
+    
+}
+
+.lista_bandeiras ul li:hover{
+    transform: scale(1.1);
+    
+
+}
+
+.lista_bandeiras ul li button{
+    border: none;
     cursor: pointer;
-    padding: 12px;
-    text-align: center;
-}
-
-.options{
-    list-style: none;
-    padding: 0;
-    margin: 6px 0 0;
-    border: 2px solid #ccc;
+    background-color: transparent;
+    padding: 0px;
+    height: 40px;
+    width: 50px;
     border-radius: 8px;
-    display: none;
-    background-color: white;
-    z-index: 10;
-    cursor: pointer;
-    text-align: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.151);
+}
+
+.lista_bandeiras ul li img{
+    height: 40px;
+    width: 50px;
+    border-radius: 8px;
+    
 }
 
 main{
@@ -61,10 +77,23 @@ main{
     margin: auto;
     border-radius: 20px;
     padding: 30px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.151);
 }
 
 
 
-main .argentina, .bolivia, .brasil, .chile, .colombia, .equador, .guiana, .paraguai, .suriname, .peru, .uruguai, .venezuela{
+main .pais{
     display: none;
+}
+
+main .pais h2, .pais_america_sul h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+main .pais p, .pais_america_sul p{
+    padding: 10px;
+    text-align: center;
+    letter-spacing: 1.05px;
+    
 }

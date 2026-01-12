@@ -16,30 +16,28 @@
 
 <body>
     <div class="container_top">
-        <h1>America do Sul</h1>
+        <h1 id="america_do_sul">America do Sul</h1>
         <section>
-            <div class="custom-select">
-                <div class="selected">Selecione a região</div>
-                    <ul class="options">
-                        <li>America do Sul</li>
-                        <li>Argentina</li>
-                        <li>Bolívia</li>
-                        <li>Brasil</li>
-                        <li>Chile</li>
-                        <li>Colômbia</li>
-                        <li>Equador</li>
-                        <li>Guiana</li>
-                        <li>Paraguai</li>
-                        <li>Peru</li>
-                        <li>Suriname</li>
-                        <li>Uruguai</li>
-                        <li>Venezuela</li>
-                    </ul>
+            <div class="lista_bandeiras">
+                <ul>
+                    <li><button class="pais-btn" data-pais="arg"><img src="img/AR.gif" alt="argentina"></button></li>
+                    <li><button class="pais-btn" data-pais="bol"><img src="img/BO.gif" alt="bolivia"></button></li>
+                    <li><button class="pais-btn" data-pais="bra"><img src="img/BR.gif" alt="brasil"></button></li>
+                    <li><button class="pais-btn" data-pais="chi"><img src="img/CL.gif" alt="chile"></button></li>
+                    <li><button class="pais-btn" data-pais="col"><img src="img/CO.gif" alt="colombia"></button></li>
+                    <li><button class="pais-btn" data-pais="equ"><img src="img/EC.gif" alt="equador"></button></li>
+                    <li><button class="pais-btn" data-pais="gui"><img src="img/GY.gif" alt="guiana"></button></li>
+                    <li><button class="pais-btn" data-pais="per"><img src="img/PE.gif" alt="peru"></button></li>
+                    <li><button class="pais-btn" data-pais="par"><img src="img/PY.gif" alt="paraguai"></button></li>
+                    <li><button class="pais-btn" data-pais="sur"><img src="img/SR.gif" alt="suriname"></button></li>
+                    <li><button class="pais-btn" data-pais="uru"><img src="img/UY.gif" alt="uruguai"></button></li>
+                    <li><button class="pais-btn" data-pais="ven"><img src="img/VE.gif" alt="venezuela"></button></li>
+                </ul>
             </div>
         </section>
     </div>
     <main>
-        <div class="america_sul">
+        <div class="pais_america_sul" id="america_sul">
             <h2>América do Sul</h2>
             <div class="container_p">
                 <p>
@@ -76,7 +74,7 @@
                 </p>
             </div>
         </div>
-        <div class="argentina">
+        <div class="pais" id="arg">
             <h2>Argentina</h2>
             <div class="container_p">
                 <p>
@@ -101,7 +99,7 @@
                 </p>
             </div>
         </div>
-        <div class="bolivia">
+        <div class="pais" id="bol">
             <h2>Bolívia</h2>
             <div class="container_p">
                 <p>
@@ -123,7 +121,7 @@
                 </p>
             </div>
         </div>
-        <div class="brasil">
+        <div class="pais" id="bra">
             <h2>Brasil</h2>
             <div class="container_p">
                 <p>
@@ -143,7 +141,7 @@
                 </p>
             </div>
         </div>
-        <div class="chile">
+        <div class="pais" id="chi">
             <h2>Chile</h2>
             <div class="container_p">
                 <p>
@@ -160,7 +158,7 @@
                 </p>
             </div>
         </div>
-        <div class="colombia">
+        <div class="pais" id="col">
             <h2>Colômbia</h2>
             <div class="container_p">
                 <p>
@@ -179,7 +177,7 @@
                 </p>
             </div>
         </div>
-        <div class="equador">
+        <div class="pais" id="equ">
             <h2>Equador</h2>
             <div class="container_p">
                 <p>
@@ -198,7 +196,7 @@
                 </p>
             </div>
         </div>
-        <div class="guiana">
+        <div class="pais" id="gui">
             <h2>Guiana</h2>
             <div class="container_p">
                 <p>
@@ -215,7 +213,7 @@
                 </p>
             </div>
         </div>
-        <div class="paraguai">
+        <div class="pais" id="par">
             <h2>Paraguai</h2>
             <div class="container_p">
                 <p>
@@ -241,7 +239,7 @@
                 </p>
             </div>
         </div>
-        <div class="peru">
+        <div class="pais" id="per">
             <h2>Peru</h2>
             <div class="container_p">
                 <p>
@@ -262,7 +260,7 @@
                 </p>
             </div>
         </div>
-        <div class="suriname">
+        <div class="pais" id="sur">
             <h2>Suriname</h2>
             <div class="container_p">
                 <p>
@@ -282,7 +280,7 @@
                 </p>
             </div>
         </div>
-        <div class="uruguai">
+        <div class="pais" id="uru">
             <h2>Uruguai</h2>
             <div class="container_p">
                 <p>
@@ -300,8 +298,8 @@
                 </p>
             </div>
         </div>
-        <div class="venezuela">
-            <h2>venezuela</h2>
+        <div class="pais" id="ven">
+            <h2>Venezuela</h2>
             <div class="container_p">
                 <p>
                     Antes da colonização espanhola, a Venezuela era habitada por diversos povos indígenas. A presença
@@ -324,27 +322,91 @@
     </footer>
 
     <script>
-        const select = document.querySelector('.custom-select');
-        const selected = select.querySelector('.selected');
-        const options = select.querySelector('.options');
+        const botoes = document.querySelectorAll('.pais-btn');
+        const paises = document.querySelectorAll('.pais');
+        const america = document.querySelectorAll('.pais_america_sul')
 
-        selected.addEventListener('click', () => {
-            options.style.display = options.style.display === 'block' ? 'none' : 'block';
-        });
+        const dadosPais = {
+            arg: {
+                nome: 'Argentina',
+                cor: '#75aadb'
+            },
+            bol: {
+                nome: 'Bolívia',
+                cor: '#3c8d40'
+            },
+            bra: {
+                nome: 'Brasil',
+                cor: '#f7d046'
+            },
+            col: {
+                nome: 'Colômbia',
+                cor: '#fcd116'
+            },
+            chi: {
+                nome: 'Chile',
+                cor: '#0039a6'
+            },
+            equ: {
+                nome: 'Equador',
+                cor: '#ce1126'
+            },
+            gui: {
+                nome: 'Guiana',
+                cor: '#009e49'
+            },
+            per: {
+                nome: 'Peru',
+                cor: '#d91023'
+            },
+            par: {
+                nome: 'Paraguai',
+                cor: '#0038a8'
+            },
+            sur: {
+                nome: 'Suriname',
+                cor: '#007a33'
+            },
+            uru: {
+                nome: 'Uruguai',
+                cor: '#5bc0eb'
+            },
+            ven: {
+                nome: 'Venezuela',
+                cor: '#cf142b'
+            }
+        };
 
-        options.querySelectorAll('li').forEach(option => {
-            option.addEventListener('click', () => {
-                selected.textContent = option.textContent;
-                options.style.display = 'none';
+        botoes.forEach(botao => {
+            botao.addEventListener('click', () => {
+                const pais = botao.dataset.pais;
+
+                // TRATATIVA
+                verificarPais(pais);
+
             });
         });
 
-        document.addEventListener('click', e => {
-            if (!select.contains(e.target)) {
-                options.style.display = 'none';
-            }
-        });
+        function verificarPais(pais) {
+            const dados = dadosPais[pais];
+            paises.forEach(dados =>{
+                dados.style.display = 'none';
+            })
+            america.forEach(dados =>{
+                dados.style.display = 'none';
+            })
+
+            const paisSelecionado = document.querySelector('#' + pais);
+            paisSelecionado.style.display = 'block';
+            if (!dados) return;
+
+            console.log(dados.nome);
+
+            // Exemplo extra de tratativa
+            document.body.style.backgroundColor = dados.cor;
+        }
     </script>
+
 </body>
 
 </html>
